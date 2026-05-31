@@ -1,1 +1,7 @@
-console.log("Hello, world! This is the API server booting up...");
+import { Elysia } from "elysia";
+
+const app = new Elysia()
+  .listen(3000);
+
+const url = `http://${app.server?.hostname}:${app.server?.port}`;
+console.log(`🦊 Elysia is running at ${url}`);
