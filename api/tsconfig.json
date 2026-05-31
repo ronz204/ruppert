@@ -32,6 +32,8 @@
     "noPropertyAccessFromIndexSignature": false,
 
     // Module resolution - Support for absolute imports
-    "paths": {},
+    "paths": {
+      "@env": ["./source/env.ts"],
+    },
   }
 }
