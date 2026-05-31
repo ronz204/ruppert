@@ -4,7 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "start:dev": "bun run --watch src/boot.ts"
+    "start:dev": "bun run --watch source/boot.ts"
   },
   "devDependencies": {
     "@types/bun": "latest"
@@ -13,6 +13,7 @@
     "typescript": "^5"
   },
   "dependencies": {
+    "@elysia/openapi": "^1.4.15",
     "@elysiajs/cors": "^1.4.2",
     "elysia": "^1.4.28",
     "zod": "^4.4.3"
