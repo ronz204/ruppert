@@ -34,7 +34,7 @@
     // Module resolution - Support for absolute imports
     "paths": {
       "@env": ["./source/env.ts"],
-      "@prisma/*": ["./gen/prisma/*"],
+      "@prisma/*": ["./prisma/*"],
       "@plugins/*": ["./source/plugins/*"],
     },
   }
