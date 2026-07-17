@@ -1,1 +1,1 @@
-#### Ruppert | Business Rule Management System
+#### Ruppert | Business Rule Management System (BRMS)
