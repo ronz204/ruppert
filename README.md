@@ -1,1 +1,1 @@
-#### DockDi | Depedency Container
+#### DockDi
