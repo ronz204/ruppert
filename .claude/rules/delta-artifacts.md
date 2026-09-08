@@ -1,11 +1,11 @@
 ---
 paths:
-  - ".claude/CLAUDE.md"
+  - "CLAUDE.md"
   - ".claude/docs/**"
   - ".claude/rules/**"
   - ".claude/agents/**"
   - ".claude/skills/**"
-  - "services/**/deltas/**"
+  - "libraries/**/deltas/**"
 ---
 
 # Delta Knowledge-Base Editing Conventions
