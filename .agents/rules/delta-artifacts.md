@@ -1,22 +1,21 @@
 ---
 paths:
-  - ".claude/CLAUDE.md"
-  - ".claude/docs/**"
-  - ".claude/rules/**"
-  - ".claude/agents/**"
-  - ".claude/skills/**"
-  - "services/**/deltas/**"
+  - "AGENTS.md"
+  - ".agents/docs/**"
+  - ".agents/rules/**"
+  - ".agents/skills/**"
+  - "libraries/**/deltas/**"
 ---
 
 # Delta Knowledge-Base Editing Conventions
 
-These paths are the durable knowledge base this project's delta methodology maintains — `CLAUDE.md`, `.claude/docs/`, `.claude/rules/`, `.claude/agents/`, `.claude/skills/`, and every slice's `spec.md`/`design.md`/`plan.md` under `services/*/deltas/`. They exist to stay grounded and current; editing them ad hoc is exactly the kind of drift the methodology is meant to prevent.
+These paths are the durable knowledge base this project's delta methodology maintains — `AGENTS.md`, `.agents/docs/`, `.agents/rules/`, `.agents/skills/`, and every slice's `spec.md`/`design.md`/`plan.md` under `libraries/*/deltas/`. They exist to stay grounded and current; editing them ad hoc is exactly the kind of drift the methodology is meant to prevent.
 
 ---
 
 ## Route through the matching skill, don't hand-edit
 
-- Writing or updating `CLAUDE.md`, a doc, a rule, an agent, a skill, or a slice's `spec.md`/`design.md`/`plan.md` goes through `archivist`, because it's the one place that knows which shape/template each of these takes and enforces the volatile-reference and writing conventions consistently. A hand-edit skips both.
+- Writing or updating `AGENTS.md`, a doc, a rule, a skill, or a slice's `spec.md`/`design.md`/`plan.md` goes through `archivist`, because it's the one place that knows which shape/template each of these takes and enforces the volatile-reference and writing conventions consistently. A hand-edit skips both.
 - A new or substantially-revised `<slice>.spec.md`/`<slice>.design.md` goes through `specifier` first, because intent, invariants, and states/interactions have to come from investigation and user Q&A, not be invented while editing the file. `archivist` still does the actual write once that material exists.
 - Checking whether a slice's `spec.md`/`design.md`/`plan.md` still matches the real implementation goes through `sentinel`, which reports drift — it never edits the file itself; a correction it surfaces still goes back through `archivist`.
 
