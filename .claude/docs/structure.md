@@ -31,7 +31,7 @@ No cross-cutting patterns beyond the project-wide invariants apply yet — there
 
 - **Constructor-to-token mapping mechanism.** Nothing has resolved how a constructor's parameters get associated with tokens without runtime reflection. This is the single most consequential open decision in the project: if no mechanism meaningfully improves on requiring a separately-maintained, order-dependent list of tokens per constructor, the project risks not offering a real design advantage over that approach. Resolving this is a prerequisite for building any real container implementation.
 - **Whether hierarchical/child containers are in scope for the first version**, pending how the core mechanism above turns out — a container design that makes child scoping awkward would push this decision later regardless of preference.
-- **Final binding-method vocabulary** (how a binding declares itself as a class, a factory, or a fixed value) is unsettled — a naming proposal exists but hasn't been validated against real usage.
+- **Final binding-method vocabulary** (how a binding declares itself as a class, a factory, or a fixed value) is unsettled — an initial proposal (verb-first names, one per strategy, rather than a single generic method covering all three) exists but hasn't been validated against real usage.
 - **Whether resolution-scope (an instance shared only within one resolution graph) ships in the first version** or is deferred, pending how often it turns out to be needed once constructor injection and the two simpler scopes are in real use.
 
 ---
