@@ -50,7 +50,7 @@ Technology decisions and rationales for the core library implementation:
 ## Open architecture decisions
 
 - **Constructor-to-Tokens Association Design**: Determining the exact ergonomic syntax to link constructor parameters with tokens without decorator reflection, addressing fragility found in existing libraries. Dependent on Phase 0 prototyping.
-- **Binding Method Vocabulary**: Choosing between explicit descriptive methods (`toClass`, `toFactory`, `toValue`) versus generalized binding methods.
+- **Binding Method Vocabulary**: Choosing between explicit descriptive methods (an initial proposal using verb-first names, one per strategy: `toClass`, `toFactory`, `toValue`, rather than a single generic method covering all three) versus generalized binding methods, pending validation against real usage.
 - **Resolution Scope Inclusion**: Deciding whether resolution-scoped lifetimes (cached within a single resolution tree) enter v1 or defer to v2 based on implementation complexity.
 
 ---

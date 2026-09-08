@@ -36,6 +36,13 @@ The library will implement:
 5. **Phase 5: Test isolation utilities** — Implement declarative binding overrides and container snapshots for unit testing suites.
 6. **Phase 6: Packaging and distribution** — Configure dual ESM/CJS build pipelines, verify bundle size budgets, and publish to npm registry.
 
+## Risks
+
+- **The constructor-to-token mapping mechanism might not turn out to be a genuine improvement over the separately-maintained-list approach** other reflection-free containers already use — an explicit, order-dependent list of tokens kept in sync by hand against a constructor's parameters, with nothing catching drift between the two until it manifests as a wrong value at runtime. If Phase 0 can't find a mechanism the compiler itself can verify stays in sync, dockdi risks ending up as just another reflection-free container with no real differentiation from that existing approach. This is the most consequential risk in the project: it threatens dockdi's entire reason to exist — closing the exact gap other reflection-free containers leave open — not just an implementation-quality concern.
+- **Branded types can produce confusing TypeScript inference errors in edge cases** — nested generics, unions of branded types — that don't surface in the simple case. This needs to be tested early against realistic usage, not assumed solved because a minimal example compiles cleanly.
+- **Rich error DX and async support both create pressure toward a runtime dependency**, which the zero-production-dependency invariant forbids. Detailed error messages (with suggestions for near-miss tokens) and async resolution machinery are exactly the kind of feature that's tempting to reach for a small utility library to build well. Holding the invariant means solving both without one, not treating the invariant as negotiable once a feature seems to need it.
+- **Scope surface creep**: adding more scope kinds than are validated as actually needed, before real usage confirms the need, complicates the API for every consumer — including the ones who would never use the extra scopes.
+
 ## Done criteria
 
 The initial implementation milestone is complete when:
